@@ -60,8 +60,8 @@ Do you use git-flow? I sure do. Please base anything you do off of
 
 ## History ##
 
-* 0.0.1 - Initial release
+* 0.0.2 - Initial release
 
 ## License ##
 
-MIT License. Copyright 2013 Dennis Walters
+MIT License. Copyright 2014 Dennis Walters

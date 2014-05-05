@@ -5,7 +5,7 @@ require "absolution/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = "Absolution"
+  s.name        = "absolution"
   s.version     = Absolution::VERSION
   s.authors     = ["Dennis Walters"]
   s.email       = ["dennis@elevatorup.com"]
