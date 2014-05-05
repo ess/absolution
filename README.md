@@ -58,6 +58,10 @@ Do you use git-flow? I sure do. Please base anything you do off of
 2. Perform some BDD magic. Seriously. Be testing.
 3. Submit a pull request.
 
+## History ##
+
+* 0.0.1 - Initial release
+
 ## License ##
 
 MIT License. Copyright 2013 Dennis Walters
