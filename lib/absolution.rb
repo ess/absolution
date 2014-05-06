@@ -7,12 +7,15 @@ module Absolution
   end
 
   def construct_absolute_url(base_url, path)
-    u = URI.parse(base_url)
-    path.split('?').tap do |path_array|
-      u.path = path_array.first.start_with?('/') ? path_array.first : "/#{path_array.first}"
-      u.query = path_array.last if path_array.length > 1
+    uri = URI.parse(base_url)
+
+    URI.parse(path.start_with?('/') ? path : "/#{path}").tap do |path_uri|
+      uri.path = path_uri.path
+      uri.query = path_uri.query
+      uri.fragment = path_uri.fragment
     end
-    u.to_s
+
+    uri.to_s
   end
 
   extend self
