@@ -52,7 +52,7 @@ end
 ## Contributing ##
 
 Do you use git-flow? I sure do. Please base anything you do off of
-[the develop branch](https://github.com/ess/factis/tree/develop).
+[the develop branch](https://github.com/ess/absolution/tree/develop).
 
 1. Fork it.
 2. Perform some BDD magic. Seriously. Be testing.
