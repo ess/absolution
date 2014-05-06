@@ -60,6 +60,7 @@ Do you use git-flow? I sure do. Please base anything you do off of
 
 ## History ##
 
+* 0.0.5 - Better relative path handling
 * 0.0.4 - Query strings are handled properly
 * 0.0.2 - Initial release
 
