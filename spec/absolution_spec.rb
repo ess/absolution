@@ -34,13 +34,14 @@ describe Absolution do
   end
 
   describe '.construct_absolute_url' do
+    let(:base_url) {'http://fake.url'}
+
     it 'combines a base url with a path' do
       expect(klass.construct_absolute_url('http://fake.url', '/asset.file')).
         to eql('http://fake.url/asset.file')
     end
 
     it 'separates the base url from the asset with at least 1 /' do
-      base_url = 'http://fake.url'
       asset_path = 'asset.file'
       expected_url = base_url + '/' + asset_path
       expect(klass.construct_absolute_url(base_url, asset_path)).
@@ -48,17 +49,22 @@ describe Absolution do
     end
 
     it 'removes an extra / when both the base url and the asset path have it' do
-      base_url = 'http://fake.url/'
       asset_path = '/asset.file'
       expected_url = base_url.chomp('/') + asset_path
-      expect(klass.construct_absolute_url(base_url, asset_path)).
+      expect(klass.construct_absolute_url(base_url + '/', asset_path)).
         to eql(expected_url)
     end
 
     it 'handles query strings appropriately' do
-      base_url = 'http://fake.url'
       asset_path = '/asset.file?key=val'
       expected_url = base_url + asset_path
+      expect(klass.construct_absolute_url(base_url, asset_path)).
+        to eql(expected_url)
+    end
+
+    it 'handles fragments appropriately' do
+      asset_path = '#fortytwo'
+      expected_url = base_url + '/' + asset_path
       expect(klass.construct_absolute_url(base_url, asset_path)).
         to eql(expected_url)
     end
