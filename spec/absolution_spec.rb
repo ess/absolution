@@ -54,6 +54,14 @@ describe Absolution do
       expect(klass.construct_absolute_url(base_url, asset_path)).
         to eql(expected_url)
     end
+
+    it 'handles query strings appropriately' do
+      base_url = 'http://fake.url'
+      asset_path = '/asset.file?key=val'
+      expected_url = base_url + asset_path
+      expect(klass.construct_absolute_url(base_url, asset_path)).
+        to eql(expected_url)
+    end
   end
 end
 
