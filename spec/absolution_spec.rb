@@ -41,6 +41,13 @@ describe Absolution do
         to eql('http://fake.url/asset.file')
     end
 
+    it 'handles a base url with an existing path component' do
+      extended_base_url = 'http://fake.url/base/path'
+      asset_path = 'asset.file'
+      expect(klass.construct_absolute_url(extended_base_url, asset_path)).
+        to eql(extended_base_url + '/' + asset_path)
+    end
+
     it 'separates the base url from the asset with at least 1 /' do
       asset_path = 'asset.file'
       expected_url = base_url + '/' + asset_path
