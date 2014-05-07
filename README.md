@@ -30,6 +30,9 @@ Absolution.absolute_url?('http://blah')
 
 Absolution.construct_absolute_url('https://base.url', 'blah')
   => 'https://base.url/blah'
+
+Absolution.construct_absolue_url('http://base.url/path/to/namespace', 'blah')
+  => 'http://base.url/path/to/namespace/blah'
 ```
 
 ## Other usage (mixin) ##
@@ -60,6 +63,7 @@ Do you use git-flow? I sure do. Please base anything you do off of
 
 ## History ##
 
+* 0.0.6 - Handle path in base URL
 * 0.0.5 - Better relative path handling
 * 0.0.4 - Query strings are handled properly
 * 0.0.2 - Initial release
